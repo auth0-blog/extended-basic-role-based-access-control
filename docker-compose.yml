@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  api:
+    build: .
+    image: api_express_js_hello-world:basic-rbac
+    container_name: api_express_js_hello-world_basic-rbac
+    ports:
+      - 6060:6060
+    networks:
+      - sample-network
+    env_file:
+      - .env
+
+networks:
+  sample-network:
+    name: hello-world_network
